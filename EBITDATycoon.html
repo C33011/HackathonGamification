@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planner</title>
+    <link rel="stylesheet" href="css/EBstyle.css">
+</head>
+<body>
+    <nav class="topnav">    
+        <a href="index.html" class="active"><img src="images/logo.png" class="logo"></a>
+        <a href="#">Advising</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Games</button>
+            <div class="dropdown-content">
+                <a href="BalanceSheetGame.html">Balance Sheet</a>
+                <a href="EBITDATycoon.html">EBITDA Tycoon</a>
+                <a href="#">Game 3</a>
+            </div>
+        </div>
+        <a href="#">Sign-in</a>
+    </nav>
+    <main>
+        <h2 class="center-title">Lemonade Stand</h2>
+        <div class="game-container">
+            <section id="resources">
+                <h2>Resources</h2>
+                <div class="resource-item">
+                    <span class="resource-label">Money:</span>
+                    <span class="resource-value">$<span id="money">100</span></span>
+                </div>
+                <div class="resource-item">
+                    <span class="resource-label">Workers:</span>
+                    <span class="resource-value"><span id="workers">0</span></span>
+                </div>
+                <div class="resource-item">
+                    <span class="resource-label">Bottles:</span>
+                    <span class="resource-value"><span id="bottles">0</span></span>
+                </div>
+                <div class="resource-item">
+                    <span class="resource-label">Lemons:</span>
+                    <span class="resource-value"><span id="lemons">0</span></span>
+                </div>
+                <div class="resource-item">
+                    <span class="resource-label">Lemonades:</span>
+                    <span class="resource-value"><span id="lemonades">0</span></span>
+                </div>
+            </section>
+            <section id="actions">
+                <h2>Actions</h2>
+                <div class="action-sections">
+                    <div class="action-section">
+                        <h3>Workers</h3>
+                        <button onclick="buyWorker()">Hire Worker ($10)</button>
+                        <button onclick="fireWorker()">Fire Worker</button>
+                        <div class="adjust-wage">
+                            <button onclick="decreaseWage()">-</button>
+                            <span id="wage">0.10</span>
+                            <button onclick="increaseWage()">+</button>
+                        </div>
+                        <p>Adjust Wage</p>
+                    </div>
+                    <div class="action-section">
+                        <h3>Supplies</h3>
+                        <div>
+                            <button onclick="decreaseAmount('bottle')">-</button>
+                            <span id="bottleAmount">5</span>
+                            <button onclick="increaseAmount('bottle')">+</button>
+                            <button onclick="buyBottle()">Buy Bottle ($1 each)</button>
+                        </div>
+                        <div>
+                            <button onclick="decreaseAmount('lemon')">-</button>
+                            <span id="lemonAmount">5</span>
+                            <button onclick="increaseAmount('lemon')">+</button>
+                            <button onclick="buyLemon()">Buy Lemon ($0.5 each)</button>
+                        </div>
+                    </div>
+                    <div class="action-section">
+                        <h3>Pricing</h3>
+                        <div class="adjust-price">
+                            <button onclick="decreasePrice()">-</button>
+                            <span id="lemonadePrice">2.00</span>
+                            <button onclick="increasePrice()">+</button>
+                        </div>
+                        <p>Adjust Lemonade Price</p>
+                        <button id="newspaperAd" onclick="advertise('newspaper')">Newspaper Ad ($10)</button>
+                        <button id="billboardAd" onclick="advertise('billboard')">Billboard Ad ($20)</button>
+                        <button id="tvAd" onclick="advertise('tv')">TV Ad ($30)</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="timer">
+            <div class="clock">
+                <div class="hand" style="transform: rotate(90deg);"></div>
+                <div class="hour-mark" style="transform: rotate(30deg) translate(0, -100px);"></div>
+                <div class="hour-mark" style="transform: rotate(60deg) translate(0, -95px);"></div>
+                <div class="hour-mark" style="transform: rotate(90deg) translate(0, -90px);"></div>
+                <div class="hour-mark" style="transform: rotate(120deg) translate(0, -85px);"></div>
+                <div class="hour-mark" style="transform: rotate(150deg) translate(0, -85px);"></div>
+                <div class="hour-mark" style="transform: rotate(180deg) translate(0, -85px);"></div>
+                <div class="hour-mark" style="transform: rotate(210deg) translate(0, -85px);"></div>
+                <div class="hour-mark" style="transform: rotate(240deg) translate(0, -90px);"></div>
+                <div class="hour-mark" style="transform: rotate(270deg) translate(0, -95px);"></div>
+                <div class="hour-mark" style="transform: rotate(300deg) translate(0, -100px);"></div>
+                <div class="hour-mark" style="transform: rotate(330deg) translate(0, -100px);"></div>
+                <div class="hour-mark" style="transform: rotate(360deg) translate(0, -100px);"></div>
+            </div>
+        </div>
+        <section id="popup" class="hidden">
+            <div class="popup-content">
+                <h2>End of Day Summary</h2>
+                <div class="summary-sections">
+                    <div class="summary-section">
+                        <h3>Day Data</h3>
+                        <div class="data-item">
+                            <span class="data-label">Amount spent on cups:</span>
+                            <span class="data-value">$<span id="totalSpentOnBottles">0</span></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Amount spent on lemons:</span>
+                            <span class="data-value">$<span id="totalSpentOnLemons">0</span></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Amount spent on hiring workers:</span>
+                            <span class="data-value">$<span id="totalSpentOnHiring">0</span></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Amount spent on wages:</span>
+                            <span class="data-value">$<span id="totalSpentOnWages">0</span></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Amount spent on advertising:</span>
+                            <span class="data-value">$<span id="totalSpentOnAdvertising">0</span></span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Amount gained from sales:</span>
+                            <span class="data-value">$<span id="totalProfit">0</span></span>
+                        </div>
+                    </div>
+                    <div class="summary-section">
+                        <h3>EBITDA Quiz</h3>
+                        <form id="ebitdaQuiz">
+                            <div class="form-group">
+                                <label for="revenue">Revenue:</label>
+                                <input type="text" id="revenue" name="revenue">
+                            </div>
+                            <div class="form-group">
+                                <label for="cogs">Cost of Goods Sold (COGS):</label>
+                                <input type="text" id="cogs" name="cogs">
+                            </div>
+                            <div class="form-group">
+                                <label for="opex">Operating Expenses (OPEX):</label>
+                                <input type="text" id="opex" name="opex">
+                            </div>
+                            <div class="form-group">
+                                <label for="ebitda">EBITDA:</label>
+                                <input type="text" id="ebitda" name="ebitda">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="summary-section">
+                        <h3>Calculator</h3>
+                        <div class="calculator">
+                            <input type="text" id="result" readonly class="shorter-result-bar">
+                            <div class="calculator-buttons" style="display: grid; grid-template-columns: repeat(4, 1fr);">
+                                <button onclick="dis('1')">1</button>
+                                <button onclick="dis('2')">2</button>
+                                <button onclick="dis('3')">3</button>
+                                <button onclick="dis('+')">+</button>
+                                <button onclick="dis('4')">4</button>
+                                <button onclick="dis('5')">5</button>
+                                <button onclick="dis('6')">6</button>
+                                <button onclick="dis('-')">-</button>
+                                <button onclick="dis('7')">7</button>
+                                <button onclick="dis('8')">8</button>
+                                <button onclick="dis('9')">9</button>
+                                <button onclick="dis('*')">*</button>
+                                <button onclick="dis('0')">0</button>
+                                <button onclick="dis('.')">.</button>
+                                <button onclick="clr()">C</button>
+                                <button onclick="dis('/')">/</button>
+                                <button class="equal" onclick="solve()" style="grid-column: span 4;">=</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="submitAnswer()">Submit Answer</button>
+            </div>
+        </section>
+        <section id="rules-popup" class="rules-popup hidden">
+            <div class="popup-content">
+                <h2>Game Rules</h2>
+                <p>Welcome to The Lemonade Stand! This game aims to help demonstrate real world applications of EBITDA and how to calculate it! Here's how to play:</p>
+                <ul class="rules-list">
+                    <li>Contract workers and buy supplies to produce lemonade.</li>
+                    <li>Wages for workers will affect their productivity with diminishing returns.</li>
+                    <li>Each bottle of lemonade requires 1 cup, 1 lemon, and 1 worker.</li>
+                    <li>Each day lasts 60 seconds.</li>
+                    <li>At the end of each day, you will need to calculate your EBITDA.</li>
+                    <li>Remember! EBITDA = Revenue - Expenses (Revenue - COGS - OPEX).</li>
+                    <li>Adjust the price of lemonade to attract more customers.</li>
+                    <li>Hire and fire workers to manage production efficiency.</li>
+                    <li>Use advertisements to boost customer purchases for the rest of that day.</li>
+                    <li>Monitor your resources and expenses to avoid bankruptcy.</li>
+                    <li>Most importantly, have fun!</li>
+                </ul>
+                <button onclick="startGame()">Ok I get it. Start the game!</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Dante Martinez - Tate Matthews </p>
+    </footer>
+    <script src="js/EBITDAscript.js"></script>
+</body>
+</html>
