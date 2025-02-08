@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="topnav">    
+        <a href="index.html" class="active"><img src="images/logo.png" class="logo"></a>
+        <a href="#">Advising</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Games</button>
+            <div class="dropdown-content">
+                <a href="BalanceSheetGame.html">Balance Sheet</a>
+                <a href="#">Game 2</a>
+                <a href="#">Game 3</a>
+            </div>
+        </div>
+        <a href="#">Sign-in</a>
+    </nav>
+    <main>
+        <script src="js/BalanceSheetGame.js"></script>
+        <section>PlaceHolder 4 Cash Amount</section>
+        <section class="balanceGame">
+            <div id="wordBank"> 
+                <div id="a1" class="answer" draggable="true" ondragstart="drag(event)">example</div>                
+            </div>
+            <div id="balanceSheet">
+                <div class="aspectsBS">
+                    Revenue:
+                </div>
+                <div class="questionInput">
+                    <div id="q1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="dropzone"></div>
+                    <div class="dropzone"></div>
+                    <div class="dropzone"></div>
+                </div>
+                <div class="aspectsBS">
+                    Operational Costs:
+                </div>
+                <div class="questionInput">
+                    <div id="q2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="aspectsBS">
+                    Cost of Goods Sold:
+                </div>
+                <div class="questionInput">
+                    <div id="q3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="aspectsBS">
+                    Income:
+                </div>       
+                <div class="aspectsBS">
+                    Profit:
+                </div>                        
+            </div>
+            <div id="wordBank">wordBank continued</div>
+            <div></div>
+            <div></div>
+            <div id="balanceSheet">
+                <div class="aspectsBS">
+                    Assets:
+                </div>
+                <div class="questionInput">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="aspectsBS">
+                    Liabilities:
+                </div>
+                <div class="questionInput">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="aspectsBS">
+                    Shareholders' Equity:
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Dante Martinez - Tate Matthews </p>
+    </footer>
+</body>
+</html>
