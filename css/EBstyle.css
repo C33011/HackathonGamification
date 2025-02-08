@@ -1,0 +1,525 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* Navigation bar styles */
+.topnav {
+    overflow: hidden;
+    background-color: #88C273;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+    background-color: #88C273;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo {
+    margin: 0px;
+    width: 100%;
+    height: 16px;
+}
+
+/* Responsive styles for navigation */
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Header styles */
+header {
+    background-color: #2e8831;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    border-bottom: 2px solid #3e9e41;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Main content styles */
+main {
+    padding: 1em;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#resources, #actions {
+    width: 45%;
+}
+
+#resources h2, #actions h2 {
+    text-align: center;
+    color: #2e8831;
+}
+
+#resources p, #actions p {
+    margin: 10px 0;
+}
+
+#actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.action-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-section h3 {
+    margin: 0;
+    color: #2e8831;
+}
+
+.action-section button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #2e8831;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.action-section button:hover {
+    background-color: #3e9e41;
+}
+
+.adjust-price, .adjust-wage {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adjust-price button, .adjust-wage button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+#timer {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid #000;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    transform-origin: center;
+}
+
+.hand {
+    position: absolute;
+    width: 50%;
+    height: 6px;
+    background: #000;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(0deg);
+    transition: transform 0.1s ease-in-out;
+}
+
+.hour-mark {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -100%);
+}
+
+/* Popup styles */
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+}
+
+.summary-sections {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.popup-content .summary-section {
+    width: 30%;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #2e8831;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.popup-content button:hover {
+    background-color: #3e9e41;
+}
+
+/* Analytics styles */
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.data-label {
+    font-weight: bold;
+}
+
+.data-value {
+    font-weight: normal;
+}
+
+/* Quiz form styles */
+#ebitdaQuiz {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#ebitdaQuiz .form-group {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#ebitdaQuiz label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#ebitdaQuiz input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Calculator styles */
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.calculator input {
+    grid-column: span 3;
+    padding: 10px;
+    font-size: 18px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.calculator input.shorter-result-bar {
+    grid-column: span 4;
+    padding: 10px;
+    font-size: 18px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.calculator button {
+    padding: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #2e8831;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.calculator button:hover {
+    background-color: #3e9e41;
+}
+
+.calculator .equal {
+    grid-column: span 4;
+    padding: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #2e8831;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.calculator .equal:hover {
+    background-color: #3e9e41;
+}
+
+/* Event log styles */
+#event-log {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-y: auto;
+    height: 400px;
+}
+
+#events {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Rules popup styles */
+.rules-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.rules-popup.hidden {
+    display: none;
+}
+
+.rules-popup .popup-content {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rules-popup .popup-content h2 {
+    margin-top: 0;
+}
+
+.rules-popup .rules-list {
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.rules-popup .rules-list li {
+    margin-bottom: 10px;
+}
+
+.rules-popup button {
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #2e8831;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.rules-popup button:hover {
+    background-color: #3e9e41;
+}
+
+/* Footer styles */
+footer {
+    background-color: #536493;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Center title styles */
+.center-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #2e8831;
+    margin-bottom: 20px;
+}
+
+/* Resource item styles */
+.resource-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.resource-label {
+    font-weight: bold;
+    color: #2e8831;
+}
+
+.resource-value {
+    font-weight: normal;
+    color: #333;
+}
