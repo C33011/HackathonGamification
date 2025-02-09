@@ -68,3 +68,14 @@ function drop(event) {
     document.getElementById("liabilities").innerText = liabilities;
     document.getElementById("shEquity").innerText = shEquity;
 }
+
+function startGame() {
+    document.getElementById('rules-popup').classList.add('hidden');
+    updateResources();
+    startDayTimer();
+}
+
+// Show the rules popup on window load
+window.onload = function() {
+    document.getElementById('rules-popup').classList.remove('hidden');
+};
