@@ -15,7 +15,7 @@
             <button class="dropbtn">Games</button>
             <div class="dropdown-content">
                 <a href="BalanceSheetGame.html">Balance Sheet</a>
-                <a href="#">Game 2</a>
+                <a href="EBITDATycoon.html">Game 2</a>
                 <a href="#">Game 3</a>
             </div>
         </div>
@@ -23,8 +23,25 @@
     </nav>
     <main>
         <script src="js/BalanceSheetGame.js"></script>
-        <section class="popUp">
-            testpopup
+        <section id="rules-popup" class="rules-popup hidden">
+            <div class="popup-content">
+                <h2>Game Rules</h2>
+                <p>Welcome to The Lemonade Stand! This game aims to help demonstrate real world applications of EBITDA and how to calculate it! Here's how to play:</p>
+                <ul class="rules-list">
+                    <li>Contract workers and buy supplies to produce lemonade.</li>
+                    <li>Wages for workers will affect their productivity with diminishing returns.</li>
+                    <li>Each bottle of lemonade requires 1 cup, 1 lemon, and 1 worker.</li>
+                    <li>Each day lasts 60 seconds.</li>
+                    <li>At the end of each day, you will need to calculate your EBITDA.</li>
+                    <li>Remember! EBITDA = Revenue - Expenses (Revenue - COGS - OPEX).</li>
+                    <li>Adjust the price of lemonade to attract more customers.</li>
+                    <li>Hire and fire workers to manage production efficiency.</li>
+                    <li>Use advertisements to boost customer purchases for the rest of that day.</li>
+                    <li>Monitor your resources and expenses to avoid bankruptcy.</li>
+                    <li>Most importantly, have fun!</li>
+                </ul>
+                <button onclick="startGame()">Ok I get it. Start the game!</button>
+            </div>
         </section>
         <div id="cashDisplay">150000</div>
         <section class="balanceGame">
