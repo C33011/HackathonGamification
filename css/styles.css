@@ -145,10 +145,21 @@ footer {
 .popUp {
    
 }
+
+details{
+    border: 1px solid;
+    margin-bottom: 10px;
+    min-width: 150px;
+}
+
+summary{
+    background-color: #88C273;
+}
+
 .balanceGame {
     display: grid;
-    grid-template-columns: 1fr 250px 5px 440px;
-    grid-template-rows: 1fr 20px 1fr;
+    grid-template-columns: 250px 5px 230px 5px 440px;
+    grid-template-rows: 275px 1px 1fr;
 }
 
 #guide {
@@ -158,14 +169,15 @@ footer {
 #wordBank {
     grid-row-start: 1;
     grid-row-end: 1;
-    grid-column-start: 2;
-    grid-column-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 3;
 
     display: grid;
     grid-template-columns: 110px 110px;
-    grid-template-rows: 50px;
+    grid-template-rows: repeat(5);
     
 }
+
 
 .answer {
     border-style: solid;
@@ -177,16 +189,16 @@ footer {
 #balanceSheet {
     grid-row-start: 1;
     grid-row-end: 1;
-    grid-column-start: 4;
+    grid-column-start: 5;
     display: grid;
     height: 150px;
 }
 
-#equitySheet {
-    
+#equitySheet {    
     grid-row-start: 3;
     grid-row-end: 4;
-    grid-column-start: 4;
+    grid-column-start: 5;
+    grid-column-end: 5;
     
 }
 
