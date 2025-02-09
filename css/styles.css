@@ -142,16 +142,29 @@ footer {
 }
 
 /*Balance Sheet Game */
+.popUp {
+   
+}
 .balanceGame {
     display: grid;
-    grid-template-columns: 1fr 440px;
-    grid-template-rows: 2fr 5px 1fr;
+    grid-template-columns: 1fr 250px 5px 440px;
+    grid-template-rows: 1fr 20px 1fr;
+}
+
+#guide {
+    min-width: 75px;
 }
 
 #wordBank {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 2;
+
     display: grid;
     grid-template-columns: 110px 110px;
     grid-template-rows: 50px;
+    
 }
 
 .answer {
@@ -161,17 +174,39 @@ footer {
     height: 47px;
 }
 
-.dragging{
-    opacity: 1;
+#balanceSheet {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 4;
+    display: grid;
+    height: 150px;
 }
 
-#balanceSheet {
-    display: grid;
+#equitySheet {
+    
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    
 }
 
 #balanceSheet div{
     border-style: solid;
     border-width: 2px 1px 2px 1px;    
+}
+
+#equitySheet div{
+    border-style: solid;
+    border-width: 2px 1px 2px 1px;    
+}
+
+.aspectsBS {
+    display: flex;
+    justify-content: space-between;
+}
+
+.aspectsBS p{
+    margin: 0px;
 }
 
 .questionInput {
@@ -184,10 +219,4 @@ footer {
     width: 110px;  
     height: 47px;
     justify-content:space-around;
-}
-
-#canvas {
-    background-color: red;   
-    width: 96vw;
-    height:70vw;
 }
