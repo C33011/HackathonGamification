@@ -11,7 +11,7 @@ body {
 /* Navigation bar styles */
 .topnav {
     overflow: hidden;
-    background-color: #2e8831;
+    background-color: #88C273;
 }
 
 .topnav a {
@@ -22,6 +22,15 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+}
+.active:hover {
+    background-color: #88C273;
+}
+
+.logo {
+    margin: 0px;
+    width: 100%;
+    height: 16px;
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
@@ -123,11 +132,103 @@ main {
 
 /* Footer styles */
 footer {
-    background-color: #333;
+    background-color: #536493;
     color: white;
     text-align: center;
     padding: 1em 0;
     position: fixed;
     width: 100%;
-    bottom: 0;
+    bottom: 0;    
+}
+
+/*Balance Sheet Game */
+.popUp {
+   
+}
+
+details{
+    border: 1px solid;
+    margin-bottom: 10px;
+    min-width: 150px;
+}
+
+summary{
+    background-color: #88C273;
+}
+
+.balanceGame {
+    display: grid;
+    grid-template-columns: 250px 5px 230px 5px 440px;
+    grid-template-rows: 275px 1px 1fr;
+}
+
+#guide {
+    min-width: 75px;
+}
+
+#wordBank {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 3;
+    grid-column-end: 3;
+
+    display: grid;
+    grid-template-columns: 110px 110px;
+    grid-template-rows: repeat(5);
+    
+}
+
+
+.answer {
+    border-style: solid;
+    border-width: 2px 1px 2px 1px; 
+    width: 110px;  
+    height: 47px;
+}
+
+#balanceSheet {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 5;
+    display: grid;
+    height: 150px;
+}
+
+#equitySheet {    
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 5;
+    grid-column-end: 5;
+    
+}
+
+#balanceSheet div{
+    border-style: solid;
+    border-width: 2px 1px 2px 1px;    
+}
+
+#equitySheet div{
+    border-style: solid;
+    border-width: 2px 1px 2px 1px;    
+}
+
+.aspectsBS {
+    display: flex;
+    justify-content: space-between;
+}
+
+.aspectsBS p{
+    margin: 0px;
+}
+
+.questionInput {
+    display: grid;
+    grid-template-columns: 110px 110px 110px 110px;
+    grid-template-rows: 50px;
+}
+
+.dropzone {
+    width: 110px;  
+    height: 47px;
+    justify-content:space-around;
 }
