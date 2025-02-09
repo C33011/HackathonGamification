@@ -19,74 +19,92 @@
                 <a href="#">Game 3</a>
             </div>
         </div>
-        <a href="#">Sign-in</a>
+        <a href="signin.html">Sign-in</a>
     </nav>
     <main>
         <script src="js/BalanceSheetGame.js"></script>
-        <section>PlaceHolder 4 Cash Amount</section>
+        <section class="popUp">
+            testpopup
+        </section>
+        <div id="cashDisplay">150000</div>
         <section class="balanceGame">
+            <div id="guide"></div>
             <div id="wordBank"> 
-                <div id="a1" class="answer" draggable="true" ondragstart="drag(event)">example</div>                
+                <div id="a2" class="answer" draggable="true" ondragstart="drag(event)" name="wage" data-value="63291.36">Wages: <br> $63,291.36</div>                
+                <div id="a5" class="answer" draggable="true" ondragstart="drag(event)" name="loan" data-value="365000">Loans: <br> $365,000</div>                
+                <div id="a4" class="answer" draggable="true" ondragstart="drag(event)" name="ware" data-value="675000">Warehouse: $675,000</div>                
+                <div id="a2" class="answer" draggable="true" ondragstart="drag(event)" name="uBill" data-value="24894.56">Utility Bill: <br> $24,894.56</div>                
+                <div id="a5" class="answer" draggable="true" ondragstart="drag(event)" name="rent" data-value="124675">Rent: <br> $124,675</div>                
+                <div id="a4" class="answer" draggable="true" ondragstart="drag(event)" name="mach" data-value="189350">Machinery: <br> $189,350</div>                
+                <div id="a1" class="answer" draggable="true" ondragstart="drag(event)" name="sale" data-value="54935.42">Sales: <br> $54,935.42</div>                
+                <div id="a3" class="answer" draggable="true" ondragstart="drag(event)" name="screw" data-value="4645.49">Screws: <br> $4,645.49</div>                
+                <div id="a2" class="answer" draggable="true" ondragstart="drag(event)" name="tax" data-value="11546.33">Taxes: <br> $11,546.33</div>                
+                <div id="a3" class="answer" draggable="true" ondragstart="drag(event)" name="steel" data-value="18324.75">Steel: <br> $18,324.75</div>                            
             </div>
             <div id="balanceSheet">
                 <div class="aspectsBS">
-                    Revenue:
+                    <p>Revenue:</p>
+                    <p id="revenue">150000</p>
                 </div>
                 <div class="questionInput">
                     <div id="q1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="dropzone"></div>
-                    <div class="dropzone"></div>
-                    <div class="dropzone"></div>
+                    <div id="q1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q1" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </div>
                 <div class="aspectsBS">
-                    Operational Costs:
+                    <p>Operational Costs:</p>
+                    <p id="opCosts">0</p>
                 </div>
                 <div class="questionInput">
                     <div id="q2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="q2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q2" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </div>
                 <div class="aspectsBS">
-                    Cost of Goods Sold:
+                    <p>Cost of Goods Sold:</p>
+                    <p id="cogs">0</p>
                 </div>
                 <div class="questionInput">
                     <div id="q3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="q3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q3" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </div>
                 <div class="aspectsBS">
-                    Income:
+                    <p>Income:</p>
+                    <p id="income">150000</p>
                 </div>       
                 <div class="aspectsBS">
-                    Profit:
-                </div>                        
-            </div>
-            <div id="wordBank">wordBank continued</div>
-            <div></div>
-            <div></div>
-            <div id="balanceSheet">
+                    <p>Profit:</p>
+                    <p id="profit">150000</p>
+                </div> 
+            </div>                       
+            <div id="equitySheet">
                 <div class="aspectsBS">
-                    Assets:
+                    <p>Assets:</p>
+                    <p id="assets">0</p>
                 </div>
                 <div class="questionInput">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="q4" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q4" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q4" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q4" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </div>
                 <div class="aspectsBS">
-                    Liabilities:
+                    <p>Liabilities</p>
+                    <p id="liabilities">0</p>
                 </div>
                 <div class="questionInput">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div id="q5" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q5" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q5" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div id="q5" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </div>
                 <div class="aspectsBS">
-                    Shareholders' Equity:
+                    <p>Shareholders' Equity:</p>
+                    <p id="shEquity">0</p>
                 </div>
             </div>
         </section>
